@@ -9,7 +9,7 @@ export default function BootSequence() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setBooted(true);
-        }, 2500);
+        }, 800);
         return () => clearTimeout(timer);
     }, []);
 
