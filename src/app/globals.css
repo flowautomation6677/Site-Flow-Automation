@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-flow-dark: #050505;
+  --color-flow-wine: #790028;
+  --color-flow-text: #ededed;
+  --color-flow-text-secondary: #888888;
+
+  --font-reachfly: var(--font-reachfly);
+  --font-gilroy: var(--font-gilroy);
+
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-33.33%);
+    }
+  }
+}
+
+:root {
+  --background: #050505;
+  --foreground: #ededed;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-gilroy), sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-reachfly), sans-serif;
+}
