@@ -1,10 +1,4 @@
 import type { Metadata } from "next";
-// Assuming using next/font/local in a real scenario, but using Google Fonts as substitutes
-// until the actual font files are placed in the /src/fonts/ directory.
-// TODO: Replace with next/font/local:
-// import localFont from "next/font/local";
-// const reachfly = localFont({ src: '../fonts/Reachfly.woff2', variable: '--font-reachfly' });
-// const gilroy = localFont({ src: '../fonts/Gilroy-Light.woff2', variable: '--font-gilroy' });
 
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";

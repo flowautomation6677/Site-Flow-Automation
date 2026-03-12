@@ -30,7 +30,8 @@ export default function Footer() {
                         const urlInput = document.getElementById('url') as HTMLInputElement;
                         const name = nameInput?.value || '';
                         const url = urlInput?.value || '';
-                        const text = `Olá! Meu nome é ${name}${url ? ` da empresa ${url}` : ''}. Gostaria de agendar um diagnóstico.`;
+                        const companyText = url ? ` da empresa ${url}` : '';
+                        const text = `Olá! Meu nome é ${name}${companyText}. Gostaria de agendar um diagnóstico.`;
                         window.open(`https://wa.me/5521990149660?text=${encodeURIComponent(text)}`, "_blank");
                     }}
                 >
@@ -74,7 +75,8 @@ export default function Footer() {
 
                 <div className="w-full flex flex-col md:flex-row items-center justify-between border-t border-white/10 pt-8 font-gilroy text-sm text-flow-text-secondary">
                     <div className="flex flex-wrap items-center gap-2 mb-4 md:mb-0">
-                        <span className="font-reachfly tracking-widest text-flow-text">FLOW</span> AUTOMATION © 2026
+                        <span className="font-reachfly tracking-widest text-flow-text">FLOW</span>
+                        {" AUTOMATION © 2026 "}
                         <span className="hidden md:inline mx-2 text-white/20">|</span>
                         <a href="https://wa.me/5521990149660" target="_blank" rel="noopener noreferrer" className="hover:text-flow-wine transition-colors">
                             WhatsApp: (21) 99014-9660
@@ -82,16 +84,16 @@ export default function Footer() {
                     </div>
 
                     {/* Easter egg for devs */}
-                    <a
-                        href="#"
-                        className="font-mono text-xs hover:text-flow-wine transition-colors border-b border-transparent hover:border-flow-wine border-dashed"
+                    <button
+                        type="button"
+                        className="font-mono text-xs hover:text-flow-wine transition-colors border-b border-transparent hover:border-flow-wine border-dashed bg-transparent"
                         onClick={(e) => {
                             e.preventDefault();
                             alert("System verified. Dev status confirmed.");
                         }}
                     >
-                        {"{ Ver Código Fonte }"}
-                    </a>
+                        &#123; Ver Código Fonte &#125;
+                    </button>
                 </div>
             </div>
         </footer>

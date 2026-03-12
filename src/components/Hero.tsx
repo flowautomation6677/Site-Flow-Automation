@@ -132,7 +132,7 @@ export async function processTraffic(source: TrafficSource) {
                                 { cx: 900, cy: 60 }, { cx: 1000, cy: 0 }
                             ].map((point, index) => (
                                 <motion.circle
-                                    key={index}
+                                    key={`point-${point.cx}-${point.cy}`}
                                     cx={point.cx}
                                     cy={point.cy}
                                     r="6"
