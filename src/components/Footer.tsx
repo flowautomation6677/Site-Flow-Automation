@@ -74,9 +74,15 @@ export default function Footer() {
                 </motion.form>
 
                 <div className="w-full flex flex-col md:flex-row items-center justify-between border-t border-white/10 pt-8 font-gilroy text-sm text-flow-text-secondary">
-                    <div className="flex flex-wrap items-center gap-2 mb-4 md:mb-0">
-                        <span className="font-reachfly tracking-widest text-flow-text">FLOW</span>
-                        {" AUTOMATION © 2026 "}
+                    <div className="flex flex-col md:flex-row flex-wrap items-center gap-2 mb-4 md:mb-0 text-center md:text-left">
+                        <div>
+                            <span className="font-reachfly tracking-widest text-flow-text">FLOW</span>
+                            {" AUTOMATION © 2026 "}
+                        </div>
+                        <span className="hidden md:inline mx-2 text-white/20">|</span>
+                        <div>
+                            Souza Consultoria em Tecnologia LTDA | CNPJ: 54.857.053/0001-52
+                        </div>
                         <span className="hidden md:inline mx-2 text-white/20">|</span>
                         <a href="https://wa.me/5521990149660" target="_blank" rel="noopener noreferrer" className="hover:text-flow-wine transition-colors">
                             WhatsApp: (21) 99014-9660
