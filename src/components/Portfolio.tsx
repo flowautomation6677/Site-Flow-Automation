@@ -12,8 +12,7 @@ const cases = [
         solution: "Desenvolvemos uma arquitetura serverless que processa linguagem natural via WhatsApp, categorizando gastos automaticamente em tempo real.",
         result: "Retenção de usuários aumentada em 40% e automação de 100% da entrada de dados.",
         mediaType: "video",
-        // Temporary placeholder public video loop
-        mediaSrc: "https://cdn.dribbble.com/users/1568450/screenshots/11267807/media/58000787e97d192bcab08ec8bb6e28fe.mp4"
+        mediaSrc: "/Videomepoupay.mp4"
     },
     {
         id: 2,
@@ -29,13 +28,13 @@ const cases = [
     {
         id: 3,
         title: "Advocacia Previdenciária B2B",
+        link: "https://gulinelliadvocacia.com.br/",
         stack: "Next.js | SEO Técnico | Framer Motion",
         challenge: "O time comercial gastava 70% do tempo filtrando leads frios que não tinham o orçamento necessário.",
         solution: "Design focado em autoridade B2B. SEO técnico para captação de leads qualificados no setor jurídico.",
         result: "Taxa de conversão de reunião para venda aumentou 60%. Custo de Aquisição (CAC) caiu pela metade.",
-        mediaType: "image",
-        // Temporary placeholder image
-        mediaSrc: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2112&auto=format&fit=crop"
+        mediaType: "video",
+        mediaSrc: "/Sitececilia.mp4"
     }
 ];
 
@@ -100,7 +99,21 @@ export default function Portfolio() {
                                     transition={{ duration: 0.6 }}
                                 >
                                     <h3 className="font-reachfly text-3xl md:text-4xl text-flow-text mb-2 tracking-wide uppercase leading-tight">
-                                        {cs.title}
+                                        {cs.link ? (
+                                            <a
+                                                href={cs.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="hover:text-flow-wine transition-colors inline-flex items-center gap-2 group"
+                                            >
+                                                {cs.title}
+                                                <svg className="w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                </svg>
+                                            </a>
+                                        ) : (
+                                            cs.title
+                                        )}
                                     </h3>
 
                                     <div className="font-mono text-xs md:text-sm text-gray-500 bg-[#0A0A0A] inline-block px-3 py-1 rounded-sm border border-[#222] mb-8">
@@ -120,6 +133,32 @@ export default function Portfolio() {
                                             <h4 className="text-green-500 font-medium mb-1">O Resultado</h4>
                                             <p className="text-flow-text-secondary font-light">{cs.result}</p>
                                         </div>
+                                    </div>
+
+                                    {/* Mobile Media Presentation */}
+                                    <div className="block md:hidden mt-8 relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-[#222] shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                                        {cs.mediaType === 'video' ? (
+                                            <video
+                                                src={cs.mediaSrc}
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
+                                                className="object-cover w-full h-full"
+                                            />
+                                        ) : (
+                                            // eslint-disable-next-line @next/next/no-img-element
+                                            <img
+                                                src={cs.mediaSrc}
+                                                alt={cs.title}
+                                                className="object-cover w-full h-full"
+                                            />
+                                        )}
+                                        {/* Elegant overlay to maintain dark style consistency */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#020202] via-[#020202]/40 to-transparent opacity-80 pointer-events-none" />
+
+                                        {/* Subtle Glow inside the device frame */}
+                                        <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-flow-wine/20 rounded-full blur-[40px] pointer-events-none" />
                                     </div>
                                 </motion.div>
                             </div>

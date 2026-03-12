@@ -24,7 +24,15 @@ export default function Footer() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    onSubmit={(e) => e.preventDefault()}
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        const nameInput = document.getElementById('name') as HTMLInputElement;
+                        const urlInput = document.getElementById('url') as HTMLInputElement;
+                        const name = nameInput?.value || '';
+                        const url = urlInput?.value || '';
+                        const text = `Olá! Meu nome é ${name}${url ? ` da empresa ${url}` : ''}. Gostaria de agendar um diagnóstico.`;
+                        window.open(`https://wa.me/5521990149660?text=${encodeURIComponent(text)}`, "_blank");
+                    }}
                 >
                     <div className="flex items-center gap-2 mb-6 pb-2 border-b border-white/5">
                         <div className="w-3 h-3 rounded-full bg-red-900" />
@@ -65,8 +73,12 @@ export default function Footer() {
                 </motion.form>
 
                 <div className="w-full flex flex-col md:flex-row items-center justify-between border-t border-white/10 pt-8 font-gilroy text-sm text-flow-text-secondary">
-                    <div className="flex items-center gap-2 mb-4 md:mb-0">
+                    <div className="flex flex-wrap items-center gap-2 mb-4 md:mb-0">
                         <span className="font-reachfly tracking-widest text-flow-text">FLOW</span> AUTOMATION © 2026
+                        <span className="hidden md:inline mx-2 text-white/20">|</span>
+                        <a href="https://wa.me/5521990149660" target="_blank" rel="noopener noreferrer" className="hover:text-flow-wine transition-colors">
+                            WhatsApp: (21) 99014-9660
+                        </a>
                     </div>
 
                     {/* Easter egg for devs */}

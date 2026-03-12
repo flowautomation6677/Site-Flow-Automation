@@ -49,12 +49,12 @@ export default function Header() {
 
                 {/* CTA Right */}
                 <div className="flex items-center">
-                    <Link href="#contato">
+                    <a href="https://wa.me/5521990149660?text=Olá! Vim pelo site e gostaria de agendar um diagnóstico." target="_blank" rel="noopener noreferrer">
                         <button className="relative px-6 py-2.5 bg-transparent border border-flow-wine/50 text-flow-text rounded-sm overflow-hidden group transition-all duration-300 font-gilroy text-sm font-medium">
                             <span className="relative z-10 transition-colors group-hover:text-white">Agendar Diagnóstico</span>
                             <div className="absolute inset-0 bg-flow-wine/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0" />
                         </button>
-                    </Link>
+                    </a>
                 </div>
             </div>
         </motion.header>
